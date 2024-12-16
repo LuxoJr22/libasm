@@ -1,23 +1,16 @@
-global	_start
-	section	.text
+global main
 
-_start:
+section .data
+	msg db "Testing %i...", 0x0a, 0x00
 
-	; ssize_t write(int fd, const void *buf, size_t count)
-	mov	rdi,1			; fd
-	mov	rsi,hello_world		; buffer
-	mov	rdx,hello_world_size 	; count
-	mov	rax,1	 		; write(2)
-	syscall
+main:
+	push rbp
+	mov rbp, rsp
 
-	; exit(result)
-	mov	rdi,0			; result
-	mov	rax,60			; exit(2)
-	syscall
+	;push 123
+	;push msg
+	;call printf
+	mov eax, 0
 
-hello_world:	db "Hello World!",10
-hello_world_size EQU $ - hello_world
-
-
-
-
+	leave
+	ret

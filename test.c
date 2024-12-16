@@ -5,7 +5,8 @@ int main(void)
 {
     int result;
     
-    result = ft_strlen(30);
+    result = 42;
+    result = add42(20);
     printf("Result is :%i\n", result);
     return 0;
 }
