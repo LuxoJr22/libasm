@@ -1,21 +1,23 @@
-SRCS	=	ft_strlen.s
+SRCS	=	ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s
 
-OBJS	=	${SRCS:.c=.o}
+OBJS	=	${SRCS:.s=.o}
 
-NAME = libft.a
+NAME = test
 
 ASM	= nasm
 RM	= rm -f
 AR	= ar rc
-INCLUDES	= -Iincludes
+GCC = gcc -m64
 
-CFLAGS 	= -f elf64
+FLAGS 	= -f elf64
 
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+.s.o:
+		${ASM} ${FLAGS} $< -o ${<:.s=.o}
 
 ${NAME}:	${OBJS}
-			${AR} ${NAME} ${OBJS}
+			${GCC} ${OBJS} test.c -o ${NAME}
+# ${NAME}:	${OBJS_S}
+# 			${AR} ${NAME} ${OBJS_S}
 
 bonus:		${OBJS_BNS}
 			${AR} ${NAME} ${OBJS_BNS}
