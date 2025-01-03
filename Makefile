@@ -2,7 +2,7 @@ SRCS	=	ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s
 
 OBJS	=	${SRCS:.s=.o}
 
-NAME = test
+NAME = libasm.a
 
 ASM	= nasm
 RM	= rm -f
@@ -15,9 +15,7 @@ FLAGS 	= -f elf64
 		${ASM} ${FLAGS} $< -o ${<:.s=.o}
 
 ${NAME}:	${OBJS}
-			${GCC} ${OBJS} test.c -o ${NAME}
-# ${NAME}:	${OBJS_S}
-# 			${AR} ${NAME} ${OBJS_S}
+			${AR} ${NAME} ${OBJS}
 
 bonus:		${OBJS_BNS}
 			${AR} ${NAME} ${OBJS_BNS}
