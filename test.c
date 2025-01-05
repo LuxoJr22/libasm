@@ -1,15 +1,17 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <errno.h>
 #include "libasm.h"
 
 int main(void) 
 {
     int result;
-    char *str;
-    
-    str = ft_strdup("GG\0");
+    char *str = "sfsef";
 
-    printf("Result is : %s\n", str);
-    free(str);
+
+    
+
+    char *s = ft_strdup(str);
+    printf("%s\n", s);
     return 0;
 }
