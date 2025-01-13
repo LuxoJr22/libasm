@@ -17,13 +17,12 @@ FLAGS 	= -f elf64
 ${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
 
-bonus:		${OBJS_BNS}
-			${AR} ${NAME} ${OBJS_BNS}
+
 
 all:		${NAME}
 
 clean:		
-	${RM} ${OBJS} ${OBJS_BNS}
+	${RM} ${OBJS}
 
 fclean:	clean
 	${RM} ${NAME}
