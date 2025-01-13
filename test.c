@@ -75,11 +75,11 @@ int main(void)
 
 
 
-    ft_write(1, "\n\nFT_READ",10);
+    ft_write(1, "\n\nFT_READ\n",10);
     ft_read(0, ft_rd, 10);
     ft_write(1, ft_rd, ft_strlen(ft_rd));
 
-    write(1, "\nREAD",6);
+    write(1, "\nREAD\n",6);
     read(0, rd, 10);
     write(1, rd, strlen(rd));
 
